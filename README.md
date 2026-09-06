@@ -2,7 +2,7 @@
 
 Assignment_1
 
-Changing the file for assignment.
+Dahyun Kim
 
 ## Project Overview
 
