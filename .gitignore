@@ -6,11 +6,21 @@ data/processed/*
 !data/processed/.gitkeep
 models/*
 !models/.gitkeep
+submissions/*
+!submissions/.gitkeep
+
+# Locally rendered modeling reports
+reports/02_modeling_baselines.html
+reports/02_modeling_candidates.html
+reports/02_modeling_tuning.html
+reports/02_modeling_final.html
 
 # Python and Jupyter cache files
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
 
 # Local environment settings
 .venv/
