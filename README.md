@@ -204,8 +204,9 @@ The local artifact rules in [`.gitignore`](.gitignore) exclude `models/*` and
 `submissions/*`, while retaining only each directory's `.gitkeep`. The fitted
 pipeline, configuration JSON, and submission CSV were all confirmed ignored.
 Only application-table features are included; the tuning comparison is not
-fully nested, and probability calibration, blending, SHAP, bootstrap
-intervals, and subgroup analysis remain deferred.
+fully nested. Probability calibration, blending, and bootstrap intervals remain
+deferred. Subsequent SHAP and simulated subgroup selection analyses are documented
+in the separate model-card notebook below.
 
 For documentation-only changes such as recording Kaggle scores, regenerate the
 HTML without rerunning model training:
@@ -215,8 +216,8 @@ jupyter nbconvert --to html notebooks/02_modeling.ipynb \
   --output 02_modeling_final.html --output-dir reports
 ```
 
-Re-execute the full notebook only when the data, preparation, or modeling code
-changes:
+Re-execute the original modeling notebook only when the data, preparation, or
+modeling code changes:
 
 ```bash
 jupyter nbconvert --to notebook --execute notebooks/02_modeling.ipynb \
@@ -225,3 +226,20 @@ jupyter nbconvert --to notebook --execute notebooks/02_modeling.ipynb \
 jupyter nbconvert --to html notebooks/02_modeling.ipynb \
   --output 02_modeling_final.html --output-dir reports
 ```
+
+## Stakeholder model card
+
+[`notebooks/04_model_card.ipynb`](notebooks/04_model_card.ipynb) presents the final
+capstone model card for business stakeholders: performance, the recommended
+proxy-based threshold **0.162724**, sensitivity, SHAP explanations, adverse-action
+mapping, fairness, limitations, and sources. Before deployment, the threshold
+must be recalibrated using Home Credit's actual profit, recovery, and loss data.
+
+The local [HTML card](reports/model_card/04_model_card.html) shows tables and
+figures with code hidden; the [self-contained notebook](reports/model_card/04_model_card.ipynb)
+embeds the same figures. Rebuild these from the completed analysis with
+`python src/build_stakeholder_model_card.py`; this performs no training or scoring.
+The [technical analysis notebook](notebooks/03_model_card_analysis.ipynb)
+documents the calculations. Notebook sources contain no execution outputs;
+model artifacts and all generated reports, predictions, and figures remain
+excluded from Git by [`.gitignore`](.gitignore).

@@ -15,6 +15,10 @@ reports/02_modeling_candidates.html
 reports/02_modeling_tuning.html
 reports/02_modeling_final.html
 
+# Model-card exports, predictions, figures, and populated notebooks stay local.
+# Output-free notebook sources remain in notebooks/.
+reports/model_card/
+
 # Python and Jupyter cache files
 __pycache__/
 *.py[cod]
