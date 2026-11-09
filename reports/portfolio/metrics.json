@@ -1,0 +1,124 @@
+{
+  "description": "Saved project evidence, not a new evaluation. No row-level data included.",
+  "population": {
+    "labeled_applications": 307511,
+    "difficulty_cases": 24825,
+    "competition_test_applications": 48744
+  },
+  "models": [
+    {
+      "model": "Histogram gradient boosting (unweighted)",
+      "mean_roc_auc": 0.7573013025620456,
+      "std_roc_auc": 0.0023433695255020985,
+      "oof_roc_auc": 0.7572893399049924,
+      "mean_accuracy": 0.919482555358262,
+      "total_cv_seconds": 67.93803437473252,
+      "fold_local_preprocessing_verified": true
+    },
+    {
+      "model": "Histogram gradient boosting (balanced)",
+      "mean_roc_auc": 0.7571960571655226,
+      "std_roc_auc": 0.002133543654025817,
+      "oof_roc_auc": 0.7571655370233862,
+      "mean_accuracy": 0.7103290632439269,
+      "total_cv_seconds": 67.75329279201105,
+      "fold_local_preprocessing_verified": true
+    },
+    {
+      "model": "Logistic regression (balanced)",
+      "mean_roc_auc": 0.7499926485677871,
+      "std_roc_auc": 0.003326769540978298,
+      "oof_roc_auc": 0.749975228779135,
+      "mean_accuracy": 0.6880762005221537,
+      "total_cv_seconds": 227.91073170909658,
+      "fold_local_preprocessing_verified": true
+    },
+    {
+      "model": "Logistic regression (unweighted)",
+      "mean_roc_auc": 0.7497771214761357,
+      "std_roc_auc": 0.00292551619346759,
+      "oof_roc_auc": 0.749762214362597,
+      "mean_accuracy": 0.9192646770157191,
+      "total_cv_seconds": 41.68973641702905,
+      "fold_local_preprocessing_verified": true
+    },
+    {
+      "model": "Random forest (balanced subsample)",
+      "mean_roc_auc": 0.7312376318124988,
+      "std_roc_auc": 0.001951119869676595,
+      "oof_roc_auc": 0.7312277925983217,
+      "mean_accuracy": 0.8127709313126502,
+      "total_cv_seconds": 197.29217733303085,
+      "fold_local_preprocessing_verified": true
+    },
+    {
+      "model": "Majority-class dummy",
+      "mean_roc_auc": 0.5,
+      "std_roc_auc": 0.0,
+      "oof_roc_auc": 0.5,
+      "mean_accuracy": 0.9192711805414276,
+      "total_cv_seconds": 0.008145667845383286,
+      "fold_local_preprocessing_verified": true
+    }
+  ],
+  "tuned_comparison": [
+    {
+      "model": "Histogram gradient boosting (sample-tuned, unweighted)",
+      "mean_roc_auc": 0.7579395612736516,
+      "std_roc_auc": 0.002260354331971193,
+      "oof_roc_auc": 0.7579355487706447,
+      "mean_accuracy": 0.919482555421712,
+      "total_cv_seconds": 55.24227320798673,
+      "fold_local_preprocessing_verified": true
+    },
+    {
+      "model": "Histogram gradient boosting (unweighted)",
+      "mean_roc_auc": 0.7573013025620456,
+      "std_roc_auc": 0.0023433695255020985,
+      "oof_roc_auc": 0.7572893399049924,
+      "mean_accuracy": 0.919482555358262,
+      "total_cv_seconds": 67.93803437473252,
+      "fold_local_preprocessing_verified": true
+    }
+  ],
+  "tuning_decision": {
+    "mean_auc_gain": 0.0006382587116059805,
+    "fold_wins": 3,
+    "oof_auc_gain": 0.0006462088656523646,
+    "worst_fold_auc_change": 0.0002716003395853983,
+    "minimum_mean_gain": 0.001,
+    "minimum_fold_wins": 2,
+    "minimum_oof_gain": 0.001,
+    "maximum_fold_regression": 0.0005,
+    "convincing_improvement": false,
+    "selected_configuration": "default"
+  },
+  "kaggle_scores": {
+    "status": "succeeded",
+    "metric": "roc_auc",
+    "public_auc": 0.74531,
+    "private_auc": 0.74479,
+    "submission_file": "home_credit_hist_gradient_boosting.csv"
+  },
+  "risk_concentration": {
+    "ranking": "Descending original development-fold OOF probability; SK_ID_CURR ascending breaks ties.",
+    "target_fraction": 0.2,
+    "selected_rows": 61502,
+    "selected_difficulty_cases": 12868
+  },
+  "recorded_software": {
+    "python": "3.13.9",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5",
+    "scikit_learn": "1.7.2"
+  },
+  "provenance": {
+    "models/final_hist_gradient_boosting_config.json": "7666161d34672393e8863bb7850d90652b76c172fb2007e5314c8fddc3a3c773",
+    "reports/model_card/tables/oof_predictions.csv": "a57df44bcf575812e001089dbc4fe788d1fd5231ca9827e4b2b17f95a83ee7cd"
+  },
+  "limitations": [
+    "Original model-development folds; not a new untouched evaluation.",
+    "Issued loans only; rejected-applicant outcomes unavailable.",
+    "No causal policy effect, measured savings, or current-policy comparison established."
+  ]
+}

@@ -1,0 +1,13 @@
+# Core versions recorded in the executed modeling notebook.
+numpy==2.3.5
+pandas==2.3.3
+scikit-learn==1.7.2
+scipy>=1.16,<1.17
+joblib>=1.5,<1.6
+threadpoolctl>=3.6,<4
+matplotlib>=3.10,<3.11
+ipython>=9,<10
+ipykernel>=6.30,<7
+jupyterlab>=4,<5
+nbformat>=5.10,<6
+nbconvert>=7.16,<8

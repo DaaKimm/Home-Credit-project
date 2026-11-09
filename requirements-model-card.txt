@@ -1,0 +1,3 @@
+-r requirements.txt
+# Version recorded in the completed SHAP analysis.
+shap==0.50.0
